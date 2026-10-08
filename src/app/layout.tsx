@@ -24,7 +24,6 @@ export const metadata: Metadata = {
     "Portfolio",
     "Software Developer",
     "Computer Science",
-    "Next.js",
   ],
   openGraph: {
     title: "Hope Soko | Web Developer",

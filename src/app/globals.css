@@ -5,30 +5,31 @@
 /* Use `light:` variants — theme is driven by <html data-theme="light"> */
 @custom-variant light (&:where([data-theme="light"], [data-theme="light"] *));
 
-/* Dark theme (default) — values taken from the Figma design */
+/* Dark theme (default) */
 :root {
-  --page: url(/back.png);
-  --card: oklch(1 0 0);
-  --card-2: #030305;
+  --page-color: #080a0d;
+  --page-image: none;
+  --card: #101418;
+  --card-2: #080a0d;
   --line: #2e333b;
   --fg: #edf0f5;
-  --muted: oklch(0.97 0 0);
-  --accent: oklch(0.97 0 0);
+  --muted: #9ea3ad;
+  --accent: #ff141a;
   --glow-1: 0.1;
   --glow-2: 0.07;
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  --card-foreground: #edf0f5;
+  --popover: #101418;
+  --popover-foreground: #edf0f5;
+  --primary: #ff141a;
+  --primary-foreground: #ffffff;
+  --secondary: #20252b;
+  --secondary-foreground: #edf0f5;
+  --muted-foreground: #9ea3ad;
+  --accent-foreground: #ffffff;
+  --destructive: #ef4444;
+  --border: #2e333b;
+  --input: #2e333b;
+  --ring: #ff141a;
   --chart-1: oklch(0.87 0 0);
   --chart-2: oklch(0.556 0 0);
   --chart-3: oklch(0.439 0 0);
@@ -43,33 +44,49 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
+  --background: #080a0d;
+  --foreground: #edf0f5;
 }
 
 /* Light theme */
 [data-theme="light"] {
-  --page: #f7f8fa;
+  --page-color: #f7f8fa;
+  --page-image: none;
   --card: #ffffff;
   --card-2: #fafafb;
   --line: #e4e7ec;
   --fg: #101828;
   --muted: #667085;
   --accent: #ff1f2d;
+  --card-foreground: #101828;
+  --popover: #ffffff;
+  --popover-foreground: #101828;
+  --primary: #ff1f2d;
+  --primary-foreground: #ffffff;
+  --secondary: #f2f4f7;
+  --secondary-foreground: #101828;
+  --muted-foreground: #667085;
+  --accent-foreground: #ffffff;
+  --destructive: #dc2626;
+  --border: #e4e7ec;
+  --input: #e4e7ec;
+  --ring: #ff1f2d;
+  --background: #f7f8fa;
+  --foreground: #101828;
   --glow-1: 0.1;
   --glow-2: 0.08;
 }
 
 @theme inline {
-  --color-page: var(--page);
+  --color-page: var(--page-color);
   --color-card: var(--card);
   --color-card-2: var(--card-2);
   --color-line: var(--line);
   --color-fg: var(--fg);
   --color-muted: var(--muted);
   --color-accent: var(--accent);
-  --font-sans: var(--font-sans);
-  --font-heading: var(--font-sans);
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -117,7 +134,8 @@ html[data-theme="light"] {
 }
 
 body {
-  background-image: var(--page);
+  background-color: var(--page-color);
+  background-image: var(--page-image);
   color: var(--fg);
 }
 

@@ -18,6 +18,8 @@ export default function Navbar() {
   const [theme, setTheme] = useState<"dark" | "light">("dark");
 
   useEffect(() => {
+    setTheme(document.documentElement.dataset.theme === "light" ? "light" : "dark");
+
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
